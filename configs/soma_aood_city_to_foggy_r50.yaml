@@ -1,0 +1,93 @@
+CACHE_MODE: False
+AOOD:
+  MOTIF_ON: True
+  # novel-class
+  OPEN_SET:
+    WARM_UP: 9 
+    TH: 0.5 
+    MOTIF_ON: True 
+    ALPHA: 0.01 
+    KNN: 5 
+    UNK_PROB: 0.5 
+    MOTIF_LOSS_COEF: 0.1 
+  # novel-scene
+  CROSS_DOMAIN:
+    MOTIF_ON: True 
+    BETA: 1.0 # std scaling 
+DATASET:
+  DA_MODE: aood
+  AOOD_SETTING: 1 # different class splittings 1-4 
+  AOOD_SCENE: 'cityscapes'
+  COCO_PANOPTIC_PATH: None
+  COCO_PATH: /home/wuyangli2/data/
+  DATASET_FILE: cityscapes_to_foggy_cityscapes
+  NUM_CLASSES: 4 # 3 known + 1
+  REMOVE_DIFFICULT: False
+DEVICE: cuda
+DIST:
+  DISTRIBUTED: False
+  DIST_BACKEND: nccl
+  DIST_URL: env://
+  GPU: 0
+  RANK: 0
+  WORLD_SIZE: 4
+EVAL: False
+LOSS:
+  AUX_LOSS: True
+  BACKBONE_LOSS_COEF: 0.1
+  BBOX_LOSS_COEF: 5.0
+  CHANNEL_QUERY_LOSS_COEF: 0.1
+  CLS_LOSS_COEF: 2.0
+  DA_GAMMA: 0
+  DICE_LOSS_COEF: 1.0
+  FOCAL_ALPHA: 0.25
+  GIOU_LOSS_COEF: 2.0
+  INSTANCE_QUERY_LOSS_COEF: 0.1
+  MASK_LOSS_COEF: 1.0
+  SET_COST_BBOX: 5.0
+  SET_COST_CLASS: 2.0
+  SET_COST_GIOU: 2.0
+  SPACE_QUERY_LOSS_COEF: 0.1
+MODEL:
+  BACKBONE: resnet50
+  BACKBONE_ALIGN: True
+  CHANNEL_ALIGN: False
+  DEC_LAYERS: 3
+  DEC_N_POINTS: 4
+  DILATION: False
+  DIM_FEEDFORWARD: 1024
+  DROPOUT: 0.1
+  ENC_LAYERS: 3
+  ENC_N_POINTS: 4
+  FROZEN_WEIGHTS: None
+  HIDDEN_DIM: 256
+  INSTANCE_ALIGN: False
+  MASKS: False
+  NHEADS: 8
+  NUM_FEATURE_LEVELS: 4
+  NUM_QUERIES: 100
+  POSITION_EMBEDDING: sine
+  POSITION_EMBEDDING_SCALE: 6.283185307179586
+  SPACE_ALIGN: False
+  TWO_STAGE: False
+  WITH_BOX_REFINE: False
+NUM_WORKERS: 2
+OUTPUT_DIR: exps/r50_aood_c2f
+RESUME: 
+LOAD_OPTIMIZER: False
+SEED: 42 # This cannot strictly control the same results. Sorry, I do not know why.
+START_EPOCH: 0
+EVAL_EPOCH: 29
+TRAIN:
+  BATCH_SIZE: 4 # each gpu, 2 for source and 2 for target
+  CLIP_MAX_NORM: 0.1
+  EPOCHS: 65
+  LR: 0.0002
+  LR_BACKBONE: 2e-05
+  LR_BACKBONE_NAMES: ['backbone.0']
+  LR_DROP: 40
+  LR_DROP_EPOCHS: None
+  LR_LINEAR_PROJ_MULT: 0.1
+  LR_LINEAR_PROJ_NAMES: ['reference_points', 'sampling_offsets']
+  SGD: False
+  WEIGHT_DECAY: 0.0001
