@@ -1,8 +1,6 @@
-## [Novel Scenes &amp; Classes: Towards Adaptive Open-set Object Detection (ICCV-23 ORAL)](assets/paper.pdf)
+## [Novel Scenes &amp; Classes: Towards Adaptive Open-set Object Detection (ICCV-23 ORAL)](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_Novel_Scenes__Classes_Towards_Adaptive_Open-set_Object_Detection_ICCV_2023_paper.pdf)
 
 By [Wuyang Li](https://wymancv.github.io/wuyang.github.io/)
-
-The paper link will be updated after the CVF open access.
 
 <div align=center>
 <img src="./assets/mot.png" width="400">
@@ -142,11 +140,11 @@ Will be provided later
 If you think this work is helpful for your project, please give it a star and citation. We sincerely appreciate your acknowledgment.
 
 ```BibTeX
-@InProceedings{li2023novel,
-  title={Novel Scenes & Classes: Towards Adaptive Open-set Object Detection},
-  author={Li, Wuyang and Guo, Xiaoqing and Yuan, Yixuan},
-  booktitle={ICCV},
-  year={2023}
+@InProceedings{Li_2023_ICCV,
+    author    = {Li, Wuyang and Guo, Xiaoqing and Yuan, Yixuan},
+    title     = {Novel Scenes \& Classes: Towards Adaptive Open-set Object Detection},
+    booktitle = {ICCV},
+    year      = {2023},
 }
 ```
 
