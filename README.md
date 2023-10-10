@@ -8,11 +8,11 @@ By [Wuyang Li](https://wymancv.github.io/wuyang.github.io/)
 
 Domain Adaptive Object Detection (DAOD) strongly assumes a shared class space between the two domains.
 
-This work breaks the assumption and formulates Adaptive Open-set Object Detection (AOOD), by allowing the target domain with novel-class objects.
+This work breaks through the assumption and formulates Adaptive Open-set Object Detection (AOOD), by allowing the target domain with novel-class objects.
 
 The object detector uses the base-class labels in the source domain for training, and aims to detect base-class objects and identify novel-class objects as unknown in the target domain.
 
-If you have any ideas and problems hope to discuss, you can reach me out via  [E-mail](mailto:wuyangli2-c@my.cityu.edu.hk).
+If you have any ideas and problems you hope to discuss, you can reach me via  [E-mail](mailto:wuyangli2-c@my.cityu.edu.hk).
 
 ## 💡 Preparation
 
@@ -26,7 +26,7 @@ git clone https://github.com/CityU-AIM-Group/SOMA.git
 
 #### (b) Install the project following [Deformable DETR](https://github.com/fundamentalvision/Deformable-DETR)
 
-Note that the following is in line with our experimental environments, which is silightly different from the official one.
+Note that the following is in line with our experimental environments, which is slightly different from the official one.
 
 ```
 # Linux, CUDA>=9.2, GCC>=5.4
@@ -56,8 +56,8 @@ chmod -R 777 ./
 
 |                |                                                              (Foggy) Cityscapes                                                              |                              Pascal VOC                              |                                                                      Clipart                                                                      |                                                                      BDD100K                                                                      |
 | :------------: | :------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------: |
-| Official Links |                                                [Imgs](https://www.cityscapes-dataset.com/login/)                                                | [Imgs+Labels](https://pjreddie.com/projects/pascal-voc-dataset-mirror/) |                                                                         -                                                                         |                                                                         -                                                                         |
-|   Our Links   | [Labels](https://portland-my.sharepoint.com/:u:/g/personal/wuyangli2-c_my_cityu_edu_hk/EVNAjK2JkG9ChREzzqdqJkYBLoZ_VOqkMdhWasN_BETGWw?e=fP9Ae4) |                                  -                                  | [Imgs+Labels](https://portland-my.sharepoint.com/:u:/g/personal/wuyangli2-c_my_cityu_edu_hk/Edz2YcXHuStIqwM_NA7k8FMBGLeyAGQcSjdSR-vYaVx_vw?e=es6KDW) | [Imgs+Labels](https://portland-my.sharepoint.com/:u:/g/personal/wuyangli2-c_my_cityu_edu_hk/EeiO6O36QgZKnTcUZMInACIB0dfWEg4OFyoEZnZCkibKHA?e=6byqBX) |
+| Official Links |                                                [Imgs](https://www.cityscapes-dataset.com/login/)                                                | [Imgs+Labels](https://pjreddie.com/projects/pascal-voc-dataset-mirror/) |                                                                      -                                                                         |[Imgs](https://bdd-data.berkeley.edu/)|
+|   Our Links   | [Labels](https://portland-my.sharepoint.com/:u:/g/personal/wuyangli2-c_my_cityu_edu_hk/EVNAjK2JkG9ChREzzqdqJkYBLoZ_VOqkMdhWasN_BETGWw?e=fP9Ae4) |                                  -                                  | [Imgs+Labels](https://portland-my.sharepoint.com/:u:/g/personal/wuyangli2-c_my_cityu_edu_hk/Edz2YcXHuStIqwM_NA7k8FMBGLeyAGQcSjdSR-vYaVx_vw?e=es6KDW) | [Labels](https://portland-my.sharepoint.com/:u:/g/personal/wuyangli2-c_my_cityu_edu_hk/EQe5cvBEKENIhJuOEIMgmBwBG49OqDidYi3C1eb7vPMWYg?e=RQaddX) |
 
 #### (b) Download DINO-pretrained ResNet-50 from this [link](https://portland-my.sharepoint.com/:u:/g/personal/wuyangli2-c_my_cityu_edu_hk/EVnK9IPi91ZPuNmwpeSWGHABqhSFQK52I7xGzroXKeuyzA?e=EnlwgO)
 
@@ -92,6 +92,9 @@ chmod -R 777 ./
    └─ VOC2007
    └─ VOC2012
 ```
+For bdd100k daytime, put all images into bdd_daytime/JPEGImages/*.jpg.
+
+The image settings for other benchmarks are consistent with [SIGMA](https://github.com/CityU-AIM-Group/SIGMA).
 
 #### (b) Change the data root in the config files
 
