@@ -111,7 +111,7 @@ We use two GPUs for training with 2 source images and 2 target images as input.
 
 ```bash
 GPUS_PER_NODE=2 
-./tools/run_dist_launch.sh 2 python main.py --config_file {CONFIG_FILE} --opts DATASET.AOOD_SETTING 1
+./tools/run_dist_launch.sh 2 python main_multi_eval.py --config_file {CONFIG_FILE} --opts DATASET.AOOD_SETTING 1
 ```
 
 We provide some scripts in our experiments in [run.sh](./run.sh). After "--opts", the settings will overwrite the default config file as the maskrcnn-benchmark framework.
