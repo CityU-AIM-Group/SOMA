@@ -107,8 +107,7 @@ https://github.com/CityU-AIM-Group/SOMA/blob/41c11cbcb3589376f956950209d5ae3fbc8
 
 ## 🔥 Start Training
 
-We use two GPUs for training with 2 source images and 2 target images as input.
-
+We use two GPUs for training with 2 source images and 2 target images as input. Please take a look at the generated eval_results.txt file in OUTPUT_DIR, which saves the per-epoch evaluation results in the latex table format.
 ```bash
 GPUS_PER_NODE=2 
 ./tools/run_dist_launch.sh 2 python main_multi_eval.py --config_file {CONFIG_FILE} --opts DATASET.AOOD_SETTING 1
