@@ -1,5 +1,7 @@
 ## [Novel Scenes &amp; Classes: Towards Adaptive Open-set Object Detection (ICCV-23 ORAL)](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_Novel_Scenes__Classes_Towards_Adaptive_Open-set_Object_Detection_ICCV_2023_paper.pdf)
 
+[[Paper Link]](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_Novel_Scenes__Classes_Towards_Adaptive_Open-set_Object_Detection_ICCV_2023_paper.pdf) [[Poster Link]](./assets/poster.pdf)
+
 By [Wuyang Li](https://wymancv.github.io/wuyang.github.io/)
 
 <div align=center>
@@ -54,9 +56,9 @@ chmod -R 777 ./
 
 #### (a) Download pre-processed datasets (VOC format) from the following links
 
-|                |                                                              (Foggy) Cityscapes                                                              |                              Pascal VOC                              |                                                                      Clipart                                                                      |                                                                      BDD100K (Daytime)                                                                     |
-| :------------: | :------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------: |
-| Official Links |                                                [Imgs](https://www.cityscapes-dataset.com/login/)                                                | [Imgs+Labels](https://pjreddie.com/projects/pascal-voc-dataset-mirror/) |                                                                      -                                                                         |[Imgs](https://bdd-data.berkeley.edu/)|
+|                |                                                              (Foggy) Cityscapes                                                              |                              Pascal VOC                              |                                                                      Clipart                                                                      |                                                              BDD100K (Daytime)                                                              |
+| :------------: | :------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------: |
+| Official Links |                                                [Imgs](https://www.cityscapes-dataset.com/login/)                                                | [Imgs+Labels](https://pjreddie.com/projects/pascal-voc-dataset-mirror/) |                                                                         -                                                                         |                                                     [Imgs](https://bdd-data.berkeley.edu/)                                                     |
 |   Our Links   | [Labels](https://portland-my.sharepoint.com/:u:/g/personal/wuyangli2-c_my_cityu_edu_hk/EVNAjK2JkG9ChREzzqdqJkYBLoZ_VOqkMdhWasN_BETGWw?e=fP9Ae4) |                                  -                                  | [Imgs+Labels](https://portland-my.sharepoint.com/:u:/g/personal/wuyangli2-c_my_cityu_edu_hk/Edz2YcXHuStIqwM_NA7k8FMBGLeyAGQcSjdSR-vYaVx_vw?e=es6KDW) | [Labels](https://portland-my.sharepoint.com/:u:/g/personal/wuyangli2-c_my_cityu_edu_hk/EQe5cvBEKENIhJuOEIMgmBwBG49OqDidYi3C1eb7vPMWYg?e=RQaddX) |
 
 #### (b) Download DINO-pretrained ResNet-50 from this [link](https://portland-my.sharepoint.com/:u:/g/personal/wuyangli2-c_my_cityu_edu_hk/EVnK9IPi91ZPuNmwpeSWGHABqhSFQK52I7xGzroXKeuyzA?e=EnlwgO)
@@ -92,6 +94,7 @@ chmod -R 777 ./
    └─ VOC2007
    └─ VOC2012
 ```
+
 For bdd100k daytime, put all images into bdd_daytime/JPEGImages/*.jpg.
 
 The image settings for other benchmarks are consistent with [SIGMA](https://github.com/CityU-AIM-Group/SIGMA).
@@ -108,6 +111,7 @@ https://github.com/CityU-AIM-Group/SOMA/blob/41c11cbcb3589376f956950209d5ae3fbc8
 ## 🔥 Start Training
 
 We use two GPUs for training with 2 source images and 2 target images as input. Please take a look at the generated eval_results.txt file in OUTPUT_DIR, which saves the per-epoch evaluation results in the latex table format.
+
 ```bash
 GPUS_PER_NODE=2 
 ./tools/run_dist_launch.sh 2 python main_multi_eval.py --config_file {CONFIG_FILE} --opts DATASET.AOOD_SETTING 1
@@ -126,14 +130,15 @@ Will be provided later
 | City 	|Foggy 	| het-sem | 
 | City 	|Foggy 	| het-sem |  -->
 
-
 ## 💬 Notification
 
 - The core idea is to select informative motifs (which can be treated as the mix-up of object queries) for self-training.
-- You can try the DA version of [OW-DETR](https://github.com/akshitac8/OW-DETR) in this repository by setting: 
+- You can try the DA version of [OW-DETR](https://github.com/akshitac8/OW-DETR) in this repository by setting:
+
 ```
 -opts AOOD.OW_DETR_ON True
 ```
+
 - Adopting SAM to address AOOD may be a good direction.
 - To visualize unknown boxes, post-processing is needed in [PostProcess](models/motif_detr.py).
 
