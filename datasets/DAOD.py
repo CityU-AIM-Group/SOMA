@@ -152,9 +152,14 @@ def build(image_set, cfg, multi_task_eval_id=4):
     if image_set == 'val':
         if cfg.DATASET.DA_MODE == 'aood':
             return AOODDetection(
-                img_folder=paths[target_domain]['val_img'],
-                ann_folder=paths[target_domain]['val_xml'],
-                data_list=paths[target_domain]['val_data_list'],
+                # For C2F and P2C
+                img_folder=paths[target_domain]['train_img'],
+                ann_folder=paths[target_domain]['train_xml'],
+                data_list=paths[target_domain]['train_data_list'],
+                # For C2B
+                # img_folder=paths[target_domain]['val_img'],
+                # ann_folder=paths[target_domain]['val_xml'],
+                # data_list=paths[target_domain]['val_data_list'],
                 transforms=make_coco_transforms(image_set),
                 remove_unk=False,
                 setting= cfg.DATASET.AOOD_SETTING,
