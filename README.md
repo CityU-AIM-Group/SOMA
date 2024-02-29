@@ -20,7 +20,7 @@ If you have any ideas and problems you hope to discuss, you can reach me via  [E
 
 We sincerely apologize for a big mistake while cleaning my code and make open-source. I show my sincerest apologies to readers who ran our code before and were unable to achieve similar results.
 
-Since City Val only has 500 images and is insufficient to evaluate the open-set performance (e.g., AOSE), we follow the p2c setting to use all unlabeled data for evaluation. Please check on our corrected target domain dataset settings. I am so so sorry!! Besides, thank you for raising the issue https://github.com/CityU-AIM-Group/SOMA/issues/5#issue-2157929369 https://github.com/CityU-AIM-Group/SOMA/issues/4#issue-2061101062 to let me notice this mistake.
+Since City Val only has 500 images and is insufficient to evaluate the open-set performance (e.g., AOSE), we follow the p2c setting to use all unlabeled data for evaluation. Please check on our corrected target domain dataset settings. I am so so sorry that I forgot this when I cleaned my code!! Besides, thank you for raising the issue https://github.com/CityU-AIM-Group/SOMA/issues/5#issue-2157929369 https://github.com/CityU-AIM-Group/SOMA/issues/4#issue-2061101062 to let me notice this mistake.
 
 https://github.com/CityU-AIM-Group/SOMA/blob/1b6868e21e74d92b634d485797f01e86ae36e4d1/datasets/DAOD.py#L156
 
