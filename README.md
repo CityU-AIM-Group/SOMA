@@ -16,6 +16,17 @@ The object detector uses the base-class labels in the source domain for training
 
 If you have any ideas and problems you hope to discuss, you can reach me via  [E-mail](mailto:wuyangli2-c@my.cityu.edu.hk).
 
+## 2024/02/29:
+
+We sincerely apologize for a big mistake while cleaning my code and make open-source. I show my sincerest apologies to readers who ran our code before and were unable to achieve similar results.
+
+Since City Val only has 500 images and is insufficient to evaluate the open-set performance (e.g., AOSE), we follow the p2c setting to use all unlabeled data for evaluation. Please check on our corrected target domain dataset settings. I am so so sorry!!
+
+https://github.com/CityU-AIM-Group/SOMA/blob/1b6868e21e74d92b634d485797f01e86ae36e4d1/datasets/DAOD.py#L156
+
+
+
+
 ## 💡 Preparation
 
 ### Step 1: Clone and Install the Project
