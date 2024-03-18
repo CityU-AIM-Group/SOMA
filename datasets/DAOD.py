@@ -34,9 +34,11 @@ def get_paths(root):
         'foggy_cityscapes': {
             'train_img': root / 'Cityscapes/leftImg8bit_foggy/train',
             'train_anno': root / 'Cityscapes/cocoAnnotations/cityscapes_foggy_train_cocostyle.json',
-            'val_img': root / 'Cityscapes/leftImg8bit_foggy/val',
-            'val_anno': root / 'Cityscapes/cocoAnnotations/cityscapes_foggy_val_cocostyle.json',
-
+            # 'val_img': root / 'Cityscapes/leftImg8bit_foggy/val',
+            # 'val_anno': root / 'Cityscapes/cocoAnnotations/cityscapes_foggy_val_cocostyle.json',
+            'val_img': root / 'Cityscapes/leftImg8bit_foggy/train',
+            'val_anno': root / 'Cityscapes/cocoAnnotations/cityscapes_foggy_train_cocostyle.json',
+            
             'train_xml': root / 'Cityscapes/AOOD_Annotations',
             'train_data_list': root / 'Cityscapes/AOOD_Main/train_target.txt',
 
