@@ -16,6 +16,11 @@ The object detector uses the base-class labels in the source domain for training
 
 If you have any ideas and problems you hope to discuss, you can reach me via  [E-mail](mailto:wuyangli2-c@my.cityu.edu.hk).
 
+## About Evaluation:
+
+It is suggested to focus on the two core metrics (mAP$_b$ and AR_{n}) for the evaluation. Due to the extremely limited data scale of AOOD, the WI is unstable and cannot reasonably reflect the open-set capacity. 
+
+
 ## 2024/02/29:
 
 I sincerely apologize for the big mistake I made when cleaning and publishing my code. I sincerely apologize to readers who ran our code before and could not achieve similar results.
