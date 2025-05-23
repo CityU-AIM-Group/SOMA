@@ -18,7 +18,7 @@ If you have any ideas and problems you hope to discuss, you can reach me via  [E
 
 ## About Evaluation:
 
-It is suggested to focus on the two core metrics (mAP$_b$ and AR_{n}) for the evaluation. Due to the extremely limited data scale of AOOD, the WI is unstable and cannot reasonably reflect the open-set capacity. 
+It is suggested to focus on the two core metrics (mAP<sub>b</sub> and AR<sub>n</sub>) for the evaluation. Due to the extremely limited data scale of AOOD, the WI is unstable and cannot reasonably reflect the open-set capacity. Do not need to worry about the two metrics.
 
 
 ## 2024/02/29:
